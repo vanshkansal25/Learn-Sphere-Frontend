@@ -31,7 +31,7 @@ export default function RootLayout({
                 <Link href="https://github.com/vanshkansal25" target="_blank">
                   <Github className="w-5 h-5 text-gray-600 hover:text-violet-700 transition" />
                 </Link>
-                <Link href="https://linkedin.com/in/your-username" target="_blank">
+                <Link href="https://linkedin.com/in/vanshkansal-dev" target="_blank">
                   <Linkedin className="w-5 h-5 text-gray-600 hover:text-violet-700 transition" />
                 </Link>
                 <Link href="https://x.com/Vanshtwt25" target="_blank">
