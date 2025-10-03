@@ -20,7 +20,7 @@ const LoginSchema = Yup.object({
   password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
 });
 
-export default function LoginPage() {
+export default function LoginForm() {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { isAuthenticated } = useAppSelector((state) => state.auth);
@@ -67,7 +67,7 @@ export default function LoginPage() {
   }, [formik.values.email, formik.values.password]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
+    <div className="min-h-screen flex items-center justify-center py-12 px-4">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-2xl text-center">Login</CardTitle>

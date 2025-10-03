@@ -1,5 +1,4 @@
-"use client"
-
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -7,8 +6,14 @@ import Header from "@/components/Header";
 import { Github, Linkedin } from "lucide-react";
 import { SiX } from "react-icons/si";
 import Link from "next/link";
+import ReduxProvider from "@/redux/provider";
 
-const inter = Inter({subsets : ["latin"]})
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "LearnSphere - LMS Platform",
+  description: "LearnSphere is a platform for students to learn and get help from teachers",
+};
 
 export default function RootLayout({
   children,
@@ -17,12 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} antialiased`}
-      >
-        <Header/>
-        {children}
-        <footer className=" py-2 bg-gray-200">
+      <body className={`${inter.className} antialiased`}>
+        <ReduxProvider>
+          <Header />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <footer className="py-2 bg-gray-200">
             <div className="flex items-center justify-between mx-8">
               <div className="text-neutral-600">
                 Developed By - Vansh Kansal
@@ -39,7 +45,8 @@ export default function RootLayout({
                 </Link>
               </div>
             </div>
-        </footer>
+          </footer>
+        </ReduxProvider>
       </body>
     </html>
   );

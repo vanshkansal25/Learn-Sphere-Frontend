@@ -2,7 +2,7 @@
 "use client";
 
 import React from "react";
-import { LoginForm } from "@/components/login-form";
+import LoginForm  from "@/components/login-form";
 import Heading from "@/app/utils/Heading";
 
 export default function LoginPage() {
