@@ -32,3 +32,20 @@ export interface RegisterResponse {
     isVerified: boolean;
   };
 }
+
+export interface ActivateUserResponse {
+  success: boolean;
+  message: string;
+  user?: {
+    _id: string;
+    name: string;
+    email: string;
+    role: string;
+    isVerified: boolean;
+  };
+}
+
+export interface ActivateUserRequest {
+  email: string;
+  activationCode: string;
+}
